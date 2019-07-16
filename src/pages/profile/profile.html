@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title text-center>Profile</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <button ion-button outline (click)="onSignIn()" color="danger"  *ngIf="!displayName"><ion-icon name="logo-google"></ion-icon>&nbsp;Sign in with Google</button>
+<br>
+  <button ion-button outline (click)="LogOut()" *ngIf="displayName">Logout</button>
+  <br>
+  <button ion-button outline (click)="onFbSignIn()" *ngIf="!Fbname">Facebook SignIn</button>
+  <br>
+  <button ion-button outline (click)="FbLogOut()" *ngIf="Fbname">Fb Logout</button>
+  <br><br><br><br>
+
+<h4 *ngIf="displayName" text-center>Welcome <h2 text-center>{{displayName}}</h2></h4>
+<div class="imageDiv" *ngIf="imageUrl">
+  <img src="{{imageUrl}}" alt="cannot display Image">
+</div>
+
+<h4 text-center style="color:grey;">{{email}}</h4>
+
+<!-- -------------------------------------------------------------------------------------------- -->
+
+<!-- <ion-card *ngIf="userData">
+  <ion-card-header>{{ userData.username }}</ion-card-header>
+  <img [src]="userData.picture" />
+  <ion-card-content>
+    <p>Email: {{ userData.email }}</p>
+    <p>First Name: {{ userData.first_name }}</p>
+  </ion-card-content>
+</ion-card> -->
+
+<h4 *ngIf="Fbname" text-center>Welcome <h2 text-center>{{Fbname}}</h2></h4>
+<div class="imageDiv" *ngIf="Fbname">
+  <img [src]="Fbdp" />
+</div>
+<br><br>
+<div *ngIf="Fbname" text-center>
+  <p>Email: {{ Fbemail }}</p>
+  <p>First Name: {{ Fbname }}</p>
+</div>
+
+</ion-content>

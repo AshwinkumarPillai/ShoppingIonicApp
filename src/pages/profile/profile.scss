@@ -1,0 +1,13 @@
+page-profile {
+    .imageDiv{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img{
+            width: 30vw;
+            height: 30vw;
+            border-radius: 50%; 
+        }
+    }
+}

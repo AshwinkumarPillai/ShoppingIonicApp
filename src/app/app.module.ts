@@ -4,26 +4,54 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
+import { GooglePlus } from '@ionic-native/google-plus';
+import { Facebook } from '@ionic-native/facebook';
+
+import { IonicStorageModule } from '@ionic/storage';
+
 import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
+import {TabsPage} from "../pages/tabs/tabs";
+import {EditRecipePage} from "../pages/edit-recipe/edit-recipe";
+import {RecipePage} from "../pages/recipe/recipe";
+import {RecipesPage} from "../pages/recipes/recipes";
+import {ShoppingListPage} from "../pages/shopping-list/shopping-list";
+import {ShoppingListService} from "../services/shopping-list";
+import { RecipesService } from '../services/recipes';
+import { ProfilePage } from '../pages/profile/profile';
+
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    TabsPage,
+    EditRecipePage,
+    RecipePage,
+    RecipesPage,
+    ShoppingListPage,
+    ProfilePage
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    TabsPage,
+    EditRecipePage,
+    RecipePage,
+    RecipesPage,
+    ShoppingListPage,
+    ProfilePage
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    ShoppingListService,
+    RecipesService,
+    GooglePlus,
+    Facebook,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

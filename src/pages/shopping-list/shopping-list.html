@@ -1,0 +1,97 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-buttons left>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title text-center>Shopping-list</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="main" #some>
+  <form #frm="ngForm" (ngSubmit)="onAddIngredient(frm)">
+    <ion-list>
+      <ion-item>
+        <ion-label floating>Ingredient Name</ion-label>
+        <ion-input type="text" name="ingredientName" ngModel required class="main_inp"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Amount</ion-label>
+        <ion-input type="number" name="ingamount" ngModel required class="main_inp"></ion-input>
+      </ion-item>
+    </ion-list>
+    <button ion-button type="submit" block [disabled]="!frm.valid">Add Item</button>
+  </form>
+  <br>
+  <hr>
+
+  <!-- <button style="padding:0;" (click)="changebg1()">
+    <div class="main1" style="width:20vw;height:50px;"></div>
+  </button>
+
+  <button style="padding:0;" (click)="changebg2()">
+    <div class="main2" style="width:20vw;height:50px;"></div>
+  </button>
+
+  <button style="padding:0;" (click)="changebg3()">
+    <div class="main3" style="width:20vw;height:50px;"></div>
+  </button>
+
+  <button style="padding:0;" (click)="changebg4()">
+    <div class="main4" style="width:20vw;height:50px;"></div>
+  </button> -->
+
+  <ion-list>
+    <ion-item *ngFor="let ing of ingredients,let i = index">
+      <h2 text-capitalize class="sllist">
+        {{ ing.name }} ({{ ing.amount }})
+        <button  (click)="onClose(i)" icon-only><ion-icon name="close" class="closebtn"></ion-icon></button>
+      </h2>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+
+<ion-menu [content]="some" pers>
+    <ion-header>
+        <ion-toolbar>
+            <ion-title>Themes</ion-title>
+        </ion-toolbar>
+    </ion-header>
+<ion-content>
+    <ion-list>
+
+        <ion-item class="theme-item" (click)="changebg1()">
+            <span>Crispy Vegy Board</span>
+            <button style="padding:0;" float-right>
+                <div class="maind1" style="width:20vw;height:50px;"></div>
+            </button>
+        </ion-item>
+        
+          <ion-item class="theme-item" (click)="changebg2()">
+              <span>Ocanic Blue</span>
+              <button style="padding:0;" float-right>
+                  <div class="maind2" style="width:20vw;height:50px;"></div>
+              </button>
+          </ion-item>
+        
+          <ion-item class="theme-item" (click)="changebg3()">
+              <span>Mesmerizing Mountain Top</span>
+              <button style="padding:0;" float-right>
+                  <div class="maind3" style="width:20vw;height:50px;"></div>
+              </button>
+          </ion-item>
+       
+          <ion-item class="theme-item" (click)="changebg4()">
+            <span>The Silent Forest</span>
+              <button style="padding:0;"  float-right>
+                  <div class="maind4" style="width:20vw;height:50px;"></div>
+              </button>
+          </ion-item>
+
+    </ion-list>
+</ion-content>
+</ion-menu>
+

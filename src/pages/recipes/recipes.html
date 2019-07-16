@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title text-center>Recipes</ion-title>
+    <ion-buttons end>
+        <button ion-button icon-only (click)="addNewRecipe()"><ion-icon name="add"></ion-icon></button>
+      </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+    <video width="320" height="240" controls>
+        <source src="assets/vids/vid.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+
+      <br><br><br><br>
+
+      <iframe width="320" height="240" src="https://www.youtube-nocookie.com/embed/PkZNo7MFNFg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+  <br><br><br><br><br>
+  <ion-list>
+    <button ion-item *ngFor="let recipe of recipes; let i = index" (click)="onLoadRecipe(recipe, i)" class="recipeitem">
+      <h2>{{recipe.title}}</h2>
+      <ion-note>{{recipe.difficulty}}</ion-note>
+    </button>
+  </ion-list>
+</ion-content>

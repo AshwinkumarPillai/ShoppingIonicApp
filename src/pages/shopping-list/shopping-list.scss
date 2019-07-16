@@ -1,0 +1,133 @@
+$bgurl1: "https://images.pexels.com/photos/255501/pexels-photo-255501.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500";
+// $bgurl1: "../../assets/imgs/firstimg.jpeg";
+$bgurld2:"https://wallpaperspit.com/wp-content/uploads/2017/11/Natural-Beach-HD-Wallpapers-1080p.jpeg";
+$bgurl2: "../../assets/imgs/secondimg.jpeg";
+// $bgurl3:"https://i.pinimg.com/originals/a0/eb/1d/a0eb1d0d3a2f7b646552542047b2bfdb.jpg";
+$bgurl3:"../../assets/imgs/thirdimg.jpg";
+// $bgurl4:"https://images.pexels.com/photos/358457/pexels-photo-358457.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500";
+$bgurl4:"../../assets/imgs/fourthimg.jpeg";
+
+
+page-shopping-list {
+
+.maind1{
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background: url($bgurl1) no-repeat center / cover; 
+}
+.maind2{
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background: url($bgurld2) no-repeat center / cover; 
+}
+.maind3{
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background: url($bgurl3) no-repeat center / cover; 
+}
+.maind4{
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background: url($bgurl4) no-repeat center / cover; 
+}
+
+  ion-navbar,ion-header{
+    background-color: #c8dcff !important;
+  }
+
+  // .main1{
+  //   background-size: cover;
+  //   -webkit-background-size: cover;
+  //   -moz-background-size: cover;
+  //   background:
+  //     linear-gradient(rgba(255,255,255,.9), rgba(255,255,255,.1)),
+  //     url($bgurl1)
+  //      no-repeat center / cover; 
+  // }
+  // .main2{
+  //   background-size: cover;
+  //   -webkit-background-size: cover;
+  //   -moz-background-size: cover;
+  //   background:
+  //     linear-gradient(rgba(255,255,255,.9), rgba(255,255,255,.1)),
+  //     url($bgurl2)
+  //      no-repeat center / cover;
+  // }
+  // .main3{
+  //   background-size: cover;
+  //   -webkit-background-size: cover;
+  //   -moz-background-size: cover;
+  //   background:
+  //     linear-gradient(rgba(255,255,255,.9), rgba(255,255,255,.1)),
+  //     url($bgurl3)
+  //      no-repeat center / cover; 
+  // }
+  // .main4{
+  //   background-size: cover;
+  //   -webkit-background-size: cover;
+  //   -moz-background-size: cover;
+  //   background:
+  //     linear-gradient(rgba(255,255,255,.9), rgba(255,255,255,.1)),
+  //     url($bgurl4)
+  //      no-repeat center / cover; 
+  // }
+ .main{
+   //background: linear-gradient(to bottom,green,green,white);
+   background-size: cover;
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   background:
+     linear-gradient(rgba(255,255,255,.9), rgba(255,255,255,.1)),
+     url($bgurl1)
+      no-repeat center / cover;
+      transition: 1s;
+   }
+
+  .theme-item{
+     
+    span{
+      // display: inline; 
+      vertical-align: middle;
+      // font-size: 20px;
+    }
+  }
+
+   ion-content{
+    ion-item{
+      background-color: rgba(245, 246, 250,.3) !important;
+      ion-input{
+        color: white;
+        border-bottom: 1px solid black;
+      }
+      &::placeholder{
+        color: white !important;
+      }
+      .main_inp{
+        color: black !important;
+      }
+      ion-label{
+        color: black !important;
+      }
+      .sllist{
+        padding-left: 10vw;
+        padding-right: 0 !important;
+        button{
+          //height: 20px;
+          background-color: transparent !important;
+          width: 10vw;
+          float: right;
+          .closebtn{
+            //float: right;
+          }
+        }
+ 
+        //color: rgba(47, 54, 64,1.0);
+      }
+   }
+
+ }
+}
